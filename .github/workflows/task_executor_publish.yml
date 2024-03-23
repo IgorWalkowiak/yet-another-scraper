@@ -2,6 +2,9 @@ name: TaskExecutor service publish
 on:
   push:
 
+env:
+  image_name: Monday
+
 jobs:
   docker_publish:
     runs-on: ubuntu-latest
@@ -20,5 +23,5 @@ jobs:
         with:
           context: ./TaskExecutor
           push: true
-          tags: femex/app:latest
+          tags: femex/${{image_name}}-${{ github.ref_name}}:latest
 
