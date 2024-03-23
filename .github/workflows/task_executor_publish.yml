@@ -4,7 +4,7 @@ on:
 
 env:
   image_name: task
-  github_branch: ${{ github.ref_name}}
+  github_branch: ${{ github.ref_name//\//-}}}
 
 jobs:
   docker_publish:
@@ -24,5 +24,5 @@ jobs:
         with:
           context: ./TaskExecutor
           push: true
-          tags: femex/${{ env.image_name }}:latest
+          tags: femex/${{ env.github_branch }}:latest
 
