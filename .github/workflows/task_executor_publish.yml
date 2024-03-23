@@ -36,5 +36,5 @@ jobs:
         with:
           context: ./TaskExecutor
           push: true
-          tags: femex/${{ steps.lowercase.outputs.lowercase }}":latest
+          tags: femex/${{ steps.lowercase.outputs.lowercase }}:latest
 
