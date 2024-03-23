@@ -3,7 +3,7 @@ on:
   push:
 
 env:
-  image_name: task
+  image_name: task-executor
 
 jobs:
   docker_publish:
@@ -36,5 +36,5 @@ jobs:
         with:
           context: ./TaskExecutor
           push: true
-          tags: femex/${{ steps.lowercase.outputs.lowercase }}:latest
+          tags: femex/${{ env.image_name }}:${{steps.lowercase.outputs.lowercase }}
 
